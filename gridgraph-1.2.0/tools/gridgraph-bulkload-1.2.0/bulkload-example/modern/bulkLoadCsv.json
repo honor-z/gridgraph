@@ -1,0 +1,33 @@
+{
+	"graphName": "modern",
+	"primaryKey": "name",
+	"connection": {
+		"sourCsv": true,
+		"csvSpliteChar": ",",
+    	"csvFolderPath": "/home/modern/csv"
+	},
+	
+	"vertexes": [{
+		"schemaName": "person",
+		"fileName": "person.csv",
+		"fieldMap": {"name": 1, "age": 2}
+	}, {
+		"schemaName": "software",
+		"fileName": "software.csv",
+		"fieldMap": {"name": 1, "lang": 2}
+	}],
+
+	"edges": [{
+		"schemaName": "knows",
+		"fileName": "knows.csv",
+		"fromVertex": "person",
+		"toVertex": "person",
+		"fieldMap": {"fromId": 1, "toId": 2, "weight": 3}
+	},{
+		"schemaName": "created",
+		"fileName": "created.csv",
+		"fromVertex": "person",
+		"toVertex": "software",
+		"fieldMap": {"fromId": 1, "toId": 2, "weight": 3}
+	}]
+}

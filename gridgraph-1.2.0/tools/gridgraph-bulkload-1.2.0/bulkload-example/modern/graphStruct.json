@@ -1,0 +1,39 @@
+{
+    "graphName": "modern",
+    "primaryKey": "name",
+    "defaultSchema": "person",
+    "schemas": [
+        {
+            "name": "person",
+            "type": "vertex",
+            "properties": [
+                {"name": "name", "type": "STRING", "unique": true, "nullable": false },
+                {"name": "age", "type": "INTEGER", "unique": false, "nullable": true }
+            ]
+        },
+        {
+            "name": "software",
+            "type": "vertex",
+            "properties": [
+                {"name": "name", "type": "STRING", "unique": true, "nullable": false },
+                {"name": "lang", "type": "STRING", "unique": false, "nullable": true }
+            ]
+        },
+        {
+            "name": "knows",
+            "type": "edge",
+            "properties": [
+                {"name": "weight", "type": "DOUBLE", "unique": false, "nullable": true }
+            ]
+        },
+        {
+            "name": "created",
+            "type": "edge",
+            "properties": [
+                {"name": "weight", "type": "DOUBLE", "unique": false, "nullable": true }
+            ]
+        }  
+    ],
+    "indexs": [
+    ]
+}

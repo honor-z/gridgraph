@@ -1,0 +1,47 @@
+{
+    "graphName": "graphName", //graph name
+    "primaryKey": "primaryKey",//primary key for all vertex schemas.
+    "defaultSchema": "vert_schema", //default vertex schema, maybe empty if not have.
+    "schemas": [
+        {
+            "name": "schemaName",
+            "type": "vertex", //Schema type, only van be vertex or edge
+            "properties": [
+                {
+                    "name": "pname", //property name
+                    "type": "STRING | INTEGER | LONG | BOOLEAN | DATE | FLOAT | DOUBLE | LIST",//data type, can be one of them
+                    "subType": "STRING | INTEGER | LONG | BOOLEAN | FLOAT | DOUBLE", //subType is used for LIST, this line can be removed if the type is not LIST
+                    "unique": true, //set to false if the type is LIST
+                    "nullable": false,
+                    "defaultValue": "abc"//Can be null if no default value
+                }
+            ]
+        },
+        {
+            "name": "schemaName2",
+            "type": "edge",
+            "properties": [
+                {
+                    "name": "pname",
+                    "type": "STRING | INTEGER | LONG | BOOLEAN | DATE | FLOAT | DOUBLE | LIST",
+                    "subType": "STRING | INTEGER | LONG | BOOLEAN | FLOAT | DOUBLE",
+                    "unique": true,
+                    "nullable": false,
+                    "defaultValue": "abc"
+                }
+            ]
+        }
+    ],
+    "indexs": [
+        {
+            "indexName": "name",
+            "propertyIndexs": [
+                {
+                    "schemaName": "vert_name",
+                    "propertyName": "name",
+                    "direction": "ASC | DESC"
+                }
+            ]
+        }
+    ]
+}
